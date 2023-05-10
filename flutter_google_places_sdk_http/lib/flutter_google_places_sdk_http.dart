@@ -101,13 +101,8 @@ class FlutterGooglePlacesSdkHttpPlugin
     inter.LatLngBounds? locationBias,
     inter.LatLngBounds? locationRestriction,
   ) {
-    var url = '${_kAPI_PLACES}/autocomplete/json?input=${query}&key=${_apiKey}';
-
-    // -- Language (from _locale)
-    final langCode = _locale?.languageCode;
-    if (langCode != null) {
-      url += '&language=$langCode';
-    }
+    var url =
+        '${_kAPI_PLACES}/autocomplete/json?input=${query}&key=${_apiKey}&language=en';
 
     // -- Countries (to Components)
     if (countries != null) {
